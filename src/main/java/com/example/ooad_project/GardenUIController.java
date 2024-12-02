@@ -137,7 +137,7 @@ public class GardenUIController {
 //
 //         Load the background image
 //         Load the background image
-        Image backgroundImage = new Image("file:/Users/srivarsha/Downloads/converted_image.png");
+        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/backgroundImage.jpg"));
 
 //        // Create an ImageView
 //        ImageView imageView = new ImageView(backgroundImage);
@@ -657,11 +657,19 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             System.out.println("Changing UI to reflect temperature event");
 
             // Create an ImageView for the temperature icon
-            Image tempImage = new Image(getClass().getResourceAsStream("/images/temperature.png"));
+            String image = "";
+            int fitHeight = 150;
+            int fitWidth = 50;
+            if (event.getAmount() < 70 ) {
+                image = "coldTemperature.png";
+            } else if(event.getAmount() > 80){
+                image = "hotTemperature.png";
+            }
+            Image tempImage = new Image(getClass().getResourceAsStream("/images/" + image));
             ImageView tempImageView = new ImageView(tempImage);
-            tempImageView.setFitHeight(20);
-            tempImageView.setFitWidth(20);
-
+            tempImageView.setFitHeight(fitHeight);
+            tempImageView.setFitWidth(fitWidth);
+            tempImageView.setLayoutX(300.0);
             // Set the text with the temperature amount
             temperatureStatusLabel.setGraphic(tempImageView);
             temperatureStatusLabel.setText(event.getAmount() + "°F");
@@ -683,11 +691,11 @@ private void handleSprinklerEvent(SprinklerEvent event) {
 
         Platform.runLater(() -> {
             // Create an ImageView for the optimal temperature icon
-            Image optimalImage = new Image(getClass().getResourceAsStream("/images/optimal.png"));
+            Image optimalImage = new Image(getClass().getResourceAsStream("/images/normalTemperature.png"));
             ImageView optimalImageView = new ImageView(optimalImage);
-            optimalImageView.setFitHeight(15);
-            optimalImageView.setFitWidth(15);
-
+            optimalImageView.setFitHeight(150);
+            optimalImageView.setFitWidth(50);
+            optimalImageView.setLayoutX(100);
             // Set the text with the optimal status
             temperatureStatusLabel.setGraphic(optimalImageView);
             temperatureStatusLabel.setText("Optimal");

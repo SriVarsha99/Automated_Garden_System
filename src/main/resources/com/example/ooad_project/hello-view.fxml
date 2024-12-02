@@ -88,25 +88,25 @@
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Text>
-                <Label fx:id="rainStatusLabel" text="Sunny" style="-fx-font-size: 14px;"/>
+                <Label fx:id="rainStatusLabel" text="Sunny" style="-fx-font-family: serif; -fx-font-size: 25px; -fx-font-weight: bold; -fx-text-fill: black;"/>
             </VBox>
 
-            <VBox layoutY="343.0" spacing="5" AnchorPane.leftAnchor="0.0">
+            <VBox layoutY="343.0" spacing="5" AnchorPane.leftAnchor="20.0">
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TEMPERATURE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Text>
-                <Label fx:id="temperatureStatusLabel" text="Optimal" />
+                <Label fx:id="temperatureStatusLabel" text="Optimal" style="-fx-font-family: serif; -fx-font-size: 25px; -fx-font-weight: bold; -fx-text-fill: black;"/>
             </VBox>
 
-            <VBox layoutY="423.0" spacing="5" AnchorPane.leftAnchor="0.0">
+            <VBox layoutY="550.0" spacing="5" AnchorPane.leftAnchor="20.0">
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PARASITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Text>
-                <Label fx:id="parasiteStatusLabel" text="No Parasites" />
+                <Label fx:id="parasiteStatusLabel" text="No Parasites" style="-fx-font-family: serif; -fx-font-size: 25px; -fx-font-weight: bold; -fx-text-fill: black;"/>
             </VBox>
         </children>
     </AnchorPane>
