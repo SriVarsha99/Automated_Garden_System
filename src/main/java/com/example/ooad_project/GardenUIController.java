@@ -579,9 +579,6 @@ private void handleSprinklerEvent(SprinklerEvent event) {
         });
 
         pause.play();
-
-
-
     }
 
 
@@ -835,20 +832,53 @@ private void handleSprinklerEvent(SprinklerEvent event) {
                 int row = random.nextInt(gardenGrid.getNumRows());
                 int col = random.nextInt(gardenGrid.getNumCols());
                 if (!gardenGrid.isSpotOccupied(row, col)) {
-//                    Need row and col for logging
-                    System.out.println("Placing " + name + " at row " + row + " col " + col);
-                    plant.setRow(row);
-                    plant.setCol(col);
-                    gardenGrid.addPlant(plant, row, col);
-                    ImageView plantView = new ImageView(new Image(getClass().getResourceAsStream("/images/" + imageFile)));
-                    plantView.setFitHeight(40);
-                    plantView.setFitWidth(40);
+
+                    ImageView farmerView = new ImageView(new Image(getClass().getResourceAsStream("/images/farmer.png")));
+                    farmerView.setFitHeight(60);
+                    farmerView.setFitWidth(60);
 
                     // Create a pane to center the image
-                    StackPane pane = new StackPane();
-                    pane.getChildren().add(plantView);
-                    gridPane.add(pane, col, row);
+                    StackPane farmerPane = new StackPane();
+                    farmerPane.getChildren().add(farmerView);
+                    gridPane.add(farmerPane, col, row);
+
+                    PauseTransition pause = new PauseTransition(Duration.seconds(3));
+
+                    pause.setOnFinished(_ -> {
+                        gridPane.getChildren().remove(farmerPane);  // Remove the rat image from the grid
+//            System.out.println("Rat removed from row " + row + " and column " + col);
+                        //gridPane.getChildren().remove(pestControlImageView);
+                    });
+                    pause.play();
+
+                    PauseTransition farmerPause = new PauseTransition(Duration.seconds(3));
+
+                    farmerPause.setOnFinished(event -> {
+                        // Code to execute after the 5-second pause
+//                    Need row and col for logging
+                        System.out.println("Placing " + name + " at row " + row + " col " + col);
+                        plant.setRow(row);
+                        plant.setCol(col);
+                        gardenGrid.addPlant(plant, row, col);
+                        ImageView plantView = new ImageView(new Image(getClass().getResourceAsStream("/images/" + imageFile)));
+                        plantView.setFitHeight(40);
+                        plantView.setFitWidth(40);
+
+                        // Create a pane to center the image
+                        StackPane pane = new StackPane();
+                        pane.getChildren().add(plantView);
+                        gridPane.add(pane, col, row);
+
+                        // Optionally update UI here
+                        Platform.runLater(() -> {
+                            // Update your UI components if necessary
+                        });
+                    });
+
+// Start the pause
+                    farmerPause.play();
                     placed = true;
+
                 }
                 attempts++;
             }
