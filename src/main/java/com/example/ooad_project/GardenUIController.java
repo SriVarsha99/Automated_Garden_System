@@ -667,8 +667,6 @@ private void handleSprinklerEvent(SprinklerEvent event) {
                 image = "coldTemperature.png";
             } else if(event.getAmount() > 80){
                 image = "hotTemperature.png";
-                fitHeight = 150;
-                fitWidth = 50;
             }
             Image tempImage = new Image(getClass().getResourceAsStream("/images/" + image));
             ImageView tempImageView = new ImageView(tempImage);
