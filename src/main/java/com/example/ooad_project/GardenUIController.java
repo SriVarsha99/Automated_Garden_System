@@ -18,7 +18,6 @@ import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -27,10 +26,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.animation.PauseTransition;
 import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.awt.*;
+import java.util.Objects;
 import java.util.Random;
 
 import org.apache.logging.log4j.LogManager;
@@ -657,15 +655,15 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             System.out.println("Changing UI to reflect temperature event");
 
             // Create an ImageView for the temperature icon
-            String image = "";
+            String image = "normalTemperature";
             int fitHeight = 150;
             int fitWidth = 50;
-            if (event.getAmount() < 70 ) {
+            if (event.getAmount() <= 50 ) {
                 image = "coldTemperature.png";
-            } else if(event.getAmount() > 80){
+            } else if(event.getAmount() >= 60){
                 image = "hotTemperature.png";
             }
-            Image tempImage = new Image(getClass().getResourceAsStream("/images/" + image));
+            Image tempImage = new Image(getClass().getResourceAsStream("/images/Temperature/" + image));
             ImageView tempImageView = new ImageView(tempImage);
             tempImageView.setFitHeight(fitHeight);
             tempImageView.setFitWidth(fitWidth);
@@ -691,7 +689,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
 
         Platform.runLater(() -> {
             // Create an ImageView for the optimal temperature icon
-            Image optimalImage = new Image(getClass().getResourceAsStream("/images/normalTemperature.png"));
+            Image optimalImage = new Image(getClass().getResourceAsStream("/images/Temperature/normalTemperature.png"));
             ImageView optimalImageView = new ImageView(optimalImage);
             optimalImageView.setFitHeight(150);
             optimalImageView.setFitWidth(50);
@@ -711,11 +709,22 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             System.out.println("Changing UI to reflect parasite event");
 
             // Create an ImageView for the sad icon
-            Image sadImage = new Image(getClass().getResourceAsStream("/images/sad.png"));
-            ImageView sadImageView = new ImageView(sadImage);
-            sadImageView.setFitHeight(20);
-            sadImageView.setFitWidth(20);
+            Image parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/parasiteDetected.png"));
 
+            if (Objects.equals(event.getParasite().getName(), "Slugs")) {
+                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/slugDetected.png"));
+            } else if (Objects.equals(event.getParasite().getName(), "Crow")) {
+                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/crowDetected.png"));
+            } else if (Objects.equals(event.getParasite().getName(), "Locust")) {
+                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/locustDetected.png"));
+            } else if (Objects.equals(event.getParasite().getName(), "Aphids")) {
+                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/locustDetected.png"));
+            } else if (Objects.equals(event.getParasite().getName(), "Rat")) {
+                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/ratDetected.png"));
+            }
+            ImageView sadImageView = new ImageView(parasiteImage);
+            sadImageView.setFitHeight(60);
+            sadImageView.setFitWidth(60);
             // Set the text with the parasite name
             parasiteStatusLabel.setGraphic(sadImageView);
             parasiteStatusLabel.setText(event.getParasite().getName() + " detected");
@@ -737,10 +746,10 @@ private void handleSprinklerEvent(SprinklerEvent event) {
 
         Platform.runLater(() -> {
             // Create an ImageView for the happy icon
-            Image happyImage = new Image(getClass().getResourceAsStream("/images/happy.png"));
+            Image happyImage = new Image(getClass().getResourceAsStream("/images/Parasites/noParasite.png"));
             ImageView happyImageView = new ImageView(happyImage);
-            happyImageView.setFitHeight(20);
-            happyImageView.setFitWidth(20);
+            happyImageView.setFitHeight(60);
+            happyImageView.setFitWidth(60);
 
             // Set the text with the no parasites status
             parasiteStatusLabel.setGraphic(happyImageView);
