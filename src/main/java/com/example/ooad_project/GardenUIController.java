@@ -709,7 +709,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             System.out.println("Changing UI to reflect parasite event");
 
             // Create an ImageView for the sad icon
-            Image parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/parasiteDetected.png"));
+            Image parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/noParasite.png"));
 
             if (Objects.equals(event.getParasite().getName(), "Slugs")) {
                 parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/slugDetected.png"));
@@ -718,10 +718,13 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             } else if (Objects.equals(event.getParasite().getName(), "Locust")) {
                 parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/locustDetected.png"));
             } else if (Objects.equals(event.getParasite().getName(), "Aphids")) {
-                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/locustDetected.png"));
+                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/aphidsDetected.png"));
             } else if (Objects.equals(event.getParasite().getName(), "Rat")) {
                 parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/ratDetected.png"));
+            } else if (Objects.equals(event.getParasite().getName(), "Parasite")) {
+                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/parasiteDetected.png"));
             }
+
             ImageView sadImageView = new ImageView(parasiteImage);
             sadImageView.setFitHeight(60);
             sadImageView.setFitWidth(60);
