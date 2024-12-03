@@ -78,6 +78,8 @@ public class GardenUIController {
     @FXML
     private AnchorPane anchorPane;
 
+    int flag = 0;
+
     private static class RainDrop {
         double x, y, speed;
 
@@ -189,7 +191,7 @@ public class GardenUIController {
         createColoredGrid(gridPane, gardenGrid.getNumRows(),gardenGrid.getNumCols());
 
         // Initialize the rain canvas and animation
-        rainCanvas = new Canvas(800, 800);
+        rainCanvas = new Canvas(1000, 800);
         anchorPane.getChildren().add(rainCanvas); // Add the canvas to the AnchorPane
         rainDrops = new ArrayList<>();
 
@@ -283,7 +285,7 @@ public class GardenUIController {
 
     // Stop rain animation after 5 seconds
     private void stopRainAfterFiveSeconds() {
-        PauseTransition pauseRain = new PauseTransition(Duration.seconds(5));
+        PauseTransition pauseRain = new PauseTransition(Duration.seconds(2));
         pauseRain.setOnFinished(event -> {
             // Clear the canvas and stop the animation
             rainAnimation.stop();
@@ -676,7 +678,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
         startRainAnimation();
 
         // Stop rain after 5 seconds
-        stopRainAfterFiveSeconds();
+        //stopRainAfterFiveSeconds();
 
         logger.info("Displayed rain event with amount: " + event.getAmount() + "mm");
 
@@ -706,7 +708,10 @@ private void handleSprinklerEvent(SprinklerEvent event) {
     }
 
     private void showSunnyWeather() {
-        stopRainAfterFiveSeconds();
+
+        if(flag == 1)
+            stopRainAfterFiveSeconds();
+        flag = 1;
         //rainCanvas.getGraphicsContext2D().clearRect(0, 0, anchorPane.getWidth(), anchorPane.getHeight());
 
         logger.info("Displayed sunny weather");
@@ -734,7 +739,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             System.out.println("Changing UI to reflect temperature event");
 
             // Create an ImageView for the temperature icon
-            String image = "normalTemperature";
+            String image = "normalTemperature.png";
             int fitHeight = 150;
             int fitWidth = 50;
             if (event.getAmount() <= 50 ) {
