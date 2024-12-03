@@ -20,7 +20,7 @@
             <VBox alignment="CENTER" prefHeight="641.0" prefWidth="1187.0" spacing="10" >
                 <HBox alignment="CENTER" spacing="10">
                     <GridPane fx:id="gridPane" gridLinesVisible="true"
-                              style=" -fx-background-color: lightgreen;">
+                              style=" -fx-background-color: rgba(144, 238, 144, 0.5);">
                         <!-- Column and Row constraints will be added dynamically in the controller -->
                     </GridPane>
                 </HBox>
