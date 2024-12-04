@@ -335,9 +335,9 @@ public class GardenUIController {
         // Hard-coded positions for plants as specified in the layout
         Object[][] gardenLayout = {
                 {"Oak", 0, 1}, {"Maple", 0, 5}, {"Pine", 0, 6},
-                {"Tomato", 1, 6}, {"Carrot", 2, 2}, {"Lettuce", 1, 0},
+                {"Corn", 1, 6}, {"Carrot", 2, 2}, {"Lettuce", 1, 0},
                 {"Sunflower", 3, 1}, {"Rose", 4, 4}, {"Jasmine", 4, 6},
-                {"Oak", 5, 6}, {"Tomato", 3, 0}, {"Sunflower", 5, 3}
+                {"Oak", 5, 6}, {"Corn", 3, 0}, {"Sunflower", 5, 3}
         };
 
         Platform.runLater(() -> {
@@ -465,57 +465,37 @@ private void handleParasiteDamageEvent(ParasiteDamageEvent event) {
     }
 //  Function that is called when the sprinkler event is published
 private void handleSprinklerEvent(SprinklerEvent event) {
-
     logger.info("Displayed Sprinkler activated at row " + event.getRow() + " and column " + event.getCol() + " with water amount " + event.getWaterNeeded());
 
     Platform.runLater(() -> {
         int row = event.getRow();
         int col = event.getCol();
 
-        // Create a group to hold animated droplets
-        Group sprinklerAnimationGroup = new Group();
+        // Load the sprinkler GIF
+        String gifPath = "/images/sprinkler.gif"; // Adjust the path to your GIF file
+        Image sprinklerGif = new Image(getClass().getResourceAsStream(gifPath));
+        ImageView sprinklerImageView = new ImageView(sprinklerGif);
 
-        // Add multiple lines or droplets to simulate water spray
-        int numDroplets = 10; // Number of water droplets
-        double tileWidth = 40; // Width of the grid cell
-        double tileHeight = 40; // Height of the grid cell
+        // Set the size of the GIF
+        sprinklerImageView.setFitWidth(80); // Adjust the size as needed
+        sprinklerImageView.setFitHeight(80);
 
-        for (int i = 0; i < numDroplets; i++) {
-            // Calculate evenly spaced positions within the tile
-            double positionX = (i % Math.sqrt(numDroplets)) * (tileWidth / Math.sqrt(numDroplets));
-            double positionY = (i / Math.sqrt(numDroplets)) * (tileHeight / Math.sqrt(numDroplets));
+        // Position the GIF in the grid
+        GridPane.setRowIndex(sprinklerImageView, row);
+        GridPane.setColumnIndex(sprinklerImageView, col);
+        GridPane.setHalignment(sprinklerImageView, HPos.CENTER); // Center align horizontally
+        GridPane.setValignment(sprinklerImageView, VPos.CENTER); // Center align vertically
 
-            Circle droplet = new Circle();
-            droplet.setRadius(3); // Radius of the droplet
-            droplet.setFill(Color.BLUE); // Color of the droplet
+        // Add the GIF to the grid
+        gridPane.getChildren().add(sprinklerImageView);
 
-            // Set starting position for the droplet
-            droplet.setCenterX(positionX);
-            droplet.setCenterY(positionY);
-
-            // Create a transition for each droplet
-            TranslateTransition transition = new TranslateTransition();
-            transition.setNode(droplet);
-            transition.setDuration(Duration.seconds(0.9)); // Droplet animation duration
-            transition.setByX(Math.random() * 20 - 2.5); // Small random spread on X-axis
-            transition.setByY(Math.random() * 20);      // Small downward spread on Y-axis
-            transition.setCycleCount(1);
-            // Add to group and start animation
-            sprinklerAnimationGroup.getChildren().add(droplet);
-            transition.play();
-        }
-
-        // Add animation group to the grid cell
-        GridPane.setRowIndex(sprinklerAnimationGroup, row);
-        GridPane.setColumnIndex(sprinklerAnimationGroup, col);
-        gridPane.getChildren().add(sprinklerAnimationGroup);
-
-        // Remove animation after it completes
-        PauseTransition pause = new PauseTransition(Duration.seconds(3)); // Total duration for animation to persist
-        pause.setOnFinished(_ -> gridPane.getChildren().remove(sprinklerAnimationGroup));
+        // Remove the GIF after it has been displayed for a while
+        PauseTransition pause = new PauseTransition(Duration.seconds(3)); // Adjust the duration
+        pause.setOnFinished(_ -> gridPane.getChildren().remove(sprinklerImageView));
         pause.play();
     });
 }
+
 
     private void initializeLogger() {
 //        LoggerAppender.setController(this);
@@ -797,14 +777,16 @@ private void handleSprinklerEvent(SprinklerEvent event) {
 
             if (Objects.equals(event.getParasite().getName(), "Slugs")) {
                 parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/slugDetected.png"));
-            } else if (Objects.equals(event.getParasite().getName(), "Crow")) {
+            } else if (Objects.equals(event.getParasite().getName(), "Corn Earworms")) {
+                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/earwormDetected.png"));
+            }else if (Objects.equals(event.getParasite().getName(), "Crow")) {
                 parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/crowDetected.png"));
             } else if (Objects.equals(event.getParasite().getName(), "Locust")) {
                 parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/locustDetected.png"));
             } else if (Objects.equals(event.getParasite().getName(), "Aphids")) {
                 parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/aphidsDetected.png"));
-            } else if (Objects.equals(event.getParasite().getName(), "Rat")) {
-                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/ratDetected.png"));
+            } else if (Objects.equals(event.getParasite().getName(), "Whiteflies")) {
+                parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/whitefliesDetected.png"));
             } else if (Objects.equals(event.getParasite().getName(), "Parasite")) {
                 parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/parasiteDetected.png"));
             }

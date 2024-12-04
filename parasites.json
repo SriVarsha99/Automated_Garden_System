@@ -1,9 +1,9 @@
 {
   "parasites": [
     {
-      "name": "Rat",
+      "name": "Whiteflies",
       "damage": 4,
-      "imageName": "rat.png",
+      "imageName": "whiteflies.png",
       "targetPlants": ["Carrot", "Lettuce"]
     },
     {
@@ -22,13 +22,20 @@
       "name": "Aphids",
       "damage": 2,
       "imageName": "aphids.png",
-      "targetPlants": ["Rose", "Tomato", "Lettuce", "Oak", "Maple", "Cedar", "Jasmine"]
+      "targetPlants": ["Rose", "Corn", "Lettuce", "Oak", "Maple", "Cedar", "Jasmine"]
     },
     {
       "name": "Slugs",
       "damage": 4,
       "imageName": "slugs.png",
       "targetPlants": ["Lettuce", "Carrot", "Lily"]
+    },
+    {
+      "name": "Corn Earworms",
+      "damage": 4,
+      "imageName": "cornEarworms.png",
+      "targetPlants": ["Corn"]
     }
+
   ]
 }

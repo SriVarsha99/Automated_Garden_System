@@ -34,7 +34,7 @@ public class WateringSystem implements Runnable {
 //        So our watering system is subscribed to the RainEvent
 //        When a rain event is published, the watering system will handle it
         EventBus.subscribe("RainEvent", event -> handleRain((RainEvent) event));
-        EventBus.subscribe("SprinklerActivationEvent", event -> sprinkle());
+        //EventBus.subscribe("SprinklerActivationEvent", event -> sprinkle());
 //        Get the garden grid instance
 //        This is the grid that holds all the plants
         this.gardenGrid = GardenGrid.getInstance();
