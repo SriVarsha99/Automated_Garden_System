@@ -285,14 +285,16 @@ public class GardenUIController {
 
     // Stop rain animation after 5 seconds
     private void stopRainAfterFiveSeconds() {
-        PauseTransition pauseRain = new PauseTransition(Duration.seconds(2));
+        PauseTransition pauseRain = new PauseTransition(Duration.seconds(1));
         pauseRain.setOnFinished(event -> {
             // Clear the canvas and stop the animation
             rainAnimation.stop();
-            rainCanvas.getGraphicsContext2D().clearRect(0, 0, 800, 800);
+            rainCanvas.getGraphicsContext2D().clearRect(0, 0, 1000, 800);
         });
         pauseRain.play();
     }
+
+
 
     public void createColoredGrid(GridPane gridPane, int numRows, int numCols) {
         double cellWidth = 80;  // Width of each cell
@@ -586,8 +588,8 @@ private void handleSprinklerEvent(SprinklerEvent event) {
         ImageView parasiteImageView = new ImageView(ratImage);
 
 //
-        parasiteImageView.setFitHeight(70);  // Match the cell size in the grid
-        parasiteImageView.setFitWidth(70);
+        parasiteImageView.setFitHeight(50);  // Match the cell size in the grid
+        parasiteImageView.setFitWidth(50);
 
         // Use the row and column from the event
         int row = event.getRow();
