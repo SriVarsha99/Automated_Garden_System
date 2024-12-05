@@ -289,7 +289,7 @@ public class GardenUIController {
         pauseRain.setOnFinished(event -> {
             // Clear the canvas and stop the animation
             rainAnimation.stop();
-            rainCanvas.getGraphicsContext2D().clearRect(0, 0, 800, 800);
+            rainCanvas.getGraphicsContext2D().clearRect(0, 0, 1000, 800);
         });
         pauseRain.play();
     }

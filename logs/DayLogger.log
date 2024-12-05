@@ -2136,102 +2136,186 @@
 2024-12-03 14:58:42 INFO  DayLogger - Day System Initialized
 2024-12-03 14:58:42 INFO  DayLogger - End of Day: 0
 2024-12-03 14:58:42 INFO  DayLogger - Changed day to: 1
-2024-12-03 17:02:02 INFO  DayLogger - Day System Initialized
-2024-12-03 17:02:02 INFO  DayLogger - End of Day: 0
-2024-12-03 17:02:02 INFO  DayLogger - Changed day to: 1
-2024-12-03 17:02:32 INFO  DayLogger - End of Day: 1
-2024-12-03 17:02:32 INFO  DayLogger - Changed day to: 2
-2024-12-03 18:12:37 INFO  DayLogger - Day System Initialized
-2024-12-03 18:12:37 INFO  DayLogger - End of Day: 0
-2024-12-03 18:12:37 INFO  DayLogger - Changed day to: 1
-2024-12-03 18:13:07 INFO  DayLogger - End of Day: 1
-2024-12-03 18:13:07 INFO  DayLogger - Changed day to: 2
-2024-12-03 18:13:37 INFO  DayLogger - End of Day: 2
-2024-12-03 18:13:37 INFO  DayLogger - Changed day to: 3
-2024-12-03 18:41:43 INFO  DayLogger - Day System Initialized
-2024-12-03 18:41:43 INFO  DayLogger - End of Day: 0
-2024-12-03 18:41:43 INFO  DayLogger - Changed day to: 1
-2024-12-03 18:56:38 INFO  DayLogger - Day System Initialized
-2024-12-03 18:56:38 INFO  DayLogger - End of Day: 0
-2024-12-03 18:56:38 INFO  DayLogger - Changed day to: 1
-2024-12-03 18:57:08 INFO  DayLogger - End of Day: 1
-2024-12-03 18:57:08 INFO  DayLogger - Changed day to: 2
-2024-12-03 18:57:38 INFO  DayLogger - End of Day: 2
-2024-12-03 18:57:38 INFO  DayLogger - Changed day to: 3
-2024-12-03 18:58:08 INFO  DayLogger - End of Day: 3
-2024-12-03 18:58:08 INFO  DayLogger - Changed day to: 4
-2024-12-03 18:58:38 INFO  DayLogger - End of Day: 4
-2024-12-03 18:58:38 INFO  DayLogger - Changed day to: 5
-2024-12-03 18:59:08 INFO  DayLogger - End of Day: 5
-2024-12-03 18:59:08 INFO  DayLogger - Changed day to: 6
-2024-12-03 18:59:38 INFO  DayLogger - End of Day: 6
-2024-12-03 18:59:38 INFO  DayLogger - Changed day to: 7
-2024-12-03 19:34:09 INFO  DayLogger - Day System Initialized
-2024-12-03 19:34:09 INFO  DayLogger - End of Day: 0
-2024-12-03 19:34:09 INFO  DayLogger - Changed day to: 1
-2024-12-03 19:34:39 INFO  DayLogger - End of Day: 1
-2024-12-03 19:34:39 INFO  DayLogger - Changed day to: 2
-2024-12-03 19:40:20 INFO  DayLogger - Day System Initialized
-2024-12-03 19:40:20 INFO  DayLogger - End of Day: 0
-2024-12-03 19:40:20 INFO  DayLogger - Changed day to: 1
-2024-12-03 19:47:11 INFO  DayLogger - Day System Initialized
-2024-12-03 19:47:11 INFO  DayLogger - End of Day: 0
-2024-12-03 19:47:11 INFO  DayLogger - Changed day to: 1
-2024-12-03 19:47:41 INFO  DayLogger - End of Day: 1
-2024-12-03 19:47:41 INFO  DayLogger - Changed day to: 2
-2024-12-03 19:48:56 INFO  DayLogger - Day System Initialized
-2024-12-03 19:48:56 INFO  DayLogger - End of Day: 0
-2024-12-03 19:48:56 INFO  DayLogger - Changed day to: 1
-2024-12-03 19:49:26 INFO  DayLogger - End of Day: 1
-2024-12-03 19:49:26 INFO  DayLogger - Changed day to: 2
-2024-12-03 19:49:56 INFO  DayLogger - End of Day: 2
-2024-12-03 19:49:56 INFO  DayLogger - Changed day to: 3
-2024-12-03 19:50:26 INFO  DayLogger - End of Day: 3
-2024-12-03 19:50:26 INFO  DayLogger - Changed day to: 4
-2024-12-03 19:50:56 INFO  DayLogger - End of Day: 4
-2024-12-03 19:50:56 INFO  DayLogger - Changed day to: 5
-2024-12-03 19:51:26 INFO  DayLogger - End of Day: 5
-2024-12-03 19:51:26 INFO  DayLogger - Changed day to: 6
-2024-12-03 19:52:50 INFO  DayLogger - Day System Initialized
-2024-12-03 19:52:50 INFO  DayLogger - End of Day: 0
-2024-12-03 19:52:50 INFO  DayLogger - Changed day to: 1
-2024-12-03 19:53:20 INFO  DayLogger - End of Day: 1
-2024-12-03 19:53:20 INFO  DayLogger - Changed day to: 2
-2024-12-03 20:02:59 INFO  DayLogger - Day System Initialized
-2024-12-03 20:02:59 INFO  DayLogger - End of Day: 0
-2024-12-03 20:02:59 INFO  DayLogger - Changed day to: 1
-2024-12-03 20:03:29 INFO  DayLogger - End of Day: 1
-2024-12-03 20:03:29 INFO  DayLogger - Changed day to: 2
-2024-12-03 20:03:59 INFO  DayLogger - End of Day: 2
-2024-12-03 20:03:59 INFO  DayLogger - Changed day to: 3
-2024-12-03 20:04:29 INFO  DayLogger - End of Day: 3
-2024-12-03 20:04:29 INFO  DayLogger - Changed day to: 4
-2024-12-03 20:04:59 INFO  DayLogger - End of Day: 4
-2024-12-03 20:04:59 INFO  DayLogger - Changed day to: 5
-2024-12-03 20:05:29 INFO  DayLogger - End of Day: 5
-2024-12-03 20:05:29 INFO  DayLogger - Changed day to: 6
-2024-12-03 20:05:59 INFO  DayLogger - End of Day: 6
-2024-12-03 20:05:59 INFO  DayLogger - Changed day to: 7
-2024-12-03 20:47:23 INFO  DayLogger - Day System Initialized
-2024-12-03 20:47:23 INFO  DayLogger - End of Day: 0
-2024-12-03 20:47:23 INFO  DayLogger - Changed day to: 1
-2024-12-03 20:47:53 INFO  DayLogger - End of Day: 1
-2024-12-03 20:47:53 INFO  DayLogger - Changed day to: 2
-2024-12-03 20:48:23 INFO  DayLogger - End of Day: 2
-2024-12-03 20:48:23 INFO  DayLogger - Changed day to: 3
-2024-12-03 20:48:53 INFO  DayLogger - End of Day: 3
-2024-12-03 20:48:53 INFO  DayLogger - Changed day to: 4
-2024-12-03 20:49:23 INFO  DayLogger - End of Day: 4
-2024-12-03 20:49:23 INFO  DayLogger - Changed day to: 5
-2024-12-03 20:49:53 INFO  DayLogger - End of Day: 5
-2024-12-03 20:49:53 INFO  DayLogger - Changed day to: 6
-2024-12-03 20:50:09 INFO  DayLogger - Day System Initialized
-2024-12-03 20:50:09 INFO  DayLogger - End of Day: 0
-2024-12-03 20:50:09 INFO  DayLogger - Changed day to: 1
-2024-12-03 20:51:19 INFO  DayLogger - Day System Initialized
-2024-12-03 20:51:19 INFO  DayLogger - End of Day: 0
-2024-12-03 20:51:19 INFO  DayLogger - Changed day to: 1
-2024-12-03 20:51:49 INFO  DayLogger - End of Day: 1
-2024-12-03 20:51:49 INFO  DayLogger - Changed day to: 2
-2024-12-03 20:52:19 INFO  DayLogger - End of Day: 2
-2024-12-03 20:52:19 INFO  DayLogger - Changed day to: 3
+2024-12-03 15:22:15 INFO  DayLogger - Day System Initialized
+2024-12-03 15:22:15 INFO  DayLogger - End of Day: 0
+2024-12-03 15:22:15 INFO  DayLogger - Changed day to: 1
+2024-12-03 15:22:45 INFO  DayLogger - End of Day: 1
+2024-12-03 15:22:45 INFO  DayLogger - Changed day to: 2
+2024-12-03 15:23:05 INFO  DayLogger - Day System Initialized
+2024-12-03 15:23:05 INFO  DayLogger - End of Day: 0
+2024-12-03 15:23:05 INFO  DayLogger - Changed day to: 1
+2024-12-03 15:23:35 INFO  DayLogger - End of Day: 1
+2024-12-03 15:23:35 INFO  DayLogger - Changed day to: 2
+2024-12-03 15:24:05 INFO  DayLogger - End of Day: 2
+2024-12-03 15:24:05 INFO  DayLogger - Changed day to: 3
+2024-12-03 15:24:44 INFO  DayLogger - Day System Initialized
+2024-12-03 15:24:44 INFO  DayLogger - End of Day: 0
+2024-12-03 15:24:44 INFO  DayLogger - Changed day to: 1
+2024-12-03 15:25:14 INFO  DayLogger - End of Day: 1
+2024-12-03 15:25:14 INFO  DayLogger - Changed day to: 2
+2024-12-03 15:26:16 INFO  DayLogger - Day System Initialized
+2024-12-03 15:26:16 INFO  DayLogger - End of Day: 0
+2024-12-03 15:26:16 INFO  DayLogger - Changed day to: 1
+2024-12-03 15:26:46 INFO  DayLogger - End of Day: 1
+2024-12-03 15:26:46 INFO  DayLogger - Changed day to: 2
+2024-12-03 15:27:50 INFO  DayLogger - Day System Initialized
+2024-12-03 15:27:50 INFO  DayLogger - End of Day: 0
+2024-12-03 15:27:50 INFO  DayLogger - Changed day to: 1
+2024-12-03 15:28:20 INFO  DayLogger - End of Day: 1
+2024-12-03 15:28:20 INFO  DayLogger - Changed day to: 2
+2024-12-03 15:28:48 INFO  DayLogger - Day System Initialized
+2024-12-03 15:28:48 INFO  DayLogger - End of Day: 0
+2024-12-03 15:28:48 INFO  DayLogger - Changed day to: 1
+2024-12-03 15:29:18 INFO  DayLogger - End of Day: 1
+2024-12-03 15:29:18 INFO  DayLogger - Changed day to: 2
+2024-12-03 15:43:35 INFO  DayLogger - Day System Initialized
+2024-12-03 15:43:35 INFO  DayLogger - End of Day: 0
+2024-12-03 15:43:35 INFO  DayLogger - Changed day to: 1
+2024-12-03 15:44:05 INFO  DayLogger - End of Day: 1
+2024-12-03 15:44:05 INFO  DayLogger - Changed day to: 2
+2024-12-03 15:44:54 INFO  DayLogger - Day System Initialized
+2024-12-03 15:44:54 INFO  DayLogger - End of Day: 0
+2024-12-03 15:44:54 INFO  DayLogger - Changed day to: 1
+2024-12-03 15:45:24 INFO  DayLogger - End of Day: 1
+2024-12-03 15:45:24 INFO  DayLogger - Changed day to: 2
+2024-12-03 16:03:03 INFO  DayLogger - Day System Initialized
+2024-12-03 16:03:03 INFO  DayLogger - End of Day: 0
+2024-12-03 16:03:03 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:07:08 INFO  DayLogger - Day System Initialized
+2024-12-03 16:07:08 INFO  DayLogger - End of Day: 0
+2024-12-03 16:07:08 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:11:33 INFO  DayLogger - Day System Initialized
+2024-12-03 16:11:33 INFO  DayLogger - End of Day: 0
+2024-12-03 16:11:33 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:13:19 INFO  DayLogger - Day System Initialized
+2024-12-03 16:13:19 INFO  DayLogger - End of Day: 0
+2024-12-03 16:13:19 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:13:49 INFO  DayLogger - End of Day: 1
+2024-12-03 16:13:49 INFO  DayLogger - Changed day to: 2
+2024-12-03 16:17:16 INFO  DayLogger - Day System Initialized
+2024-12-03 16:17:16 INFO  DayLogger - End of Day: 0
+2024-12-03 16:17:16 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:17:46 INFO  DayLogger - End of Day: 1
+2024-12-03 16:17:46 INFO  DayLogger - Changed day to: 2
+2024-12-03 16:22:32 INFO  DayLogger - Day System Initialized
+2024-12-03 16:22:32 INFO  DayLogger - End of Day: 0
+2024-12-03 16:22:32 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:22:42 INFO  DayLogger - End of Day: 1
+2024-12-03 16:22:42 INFO  DayLogger - Changed day to: 2
+2024-12-03 16:23:12 INFO  DayLogger - Day System Initialized
+2024-12-03 16:23:12 INFO  DayLogger - End of Day: 0
+2024-12-03 16:23:12 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:23:27 INFO  DayLogger - End of Day: 1
+2024-12-03 16:23:27 INFO  DayLogger - Changed day to: 2
+2024-12-03 16:25:44 INFO  DayLogger - Day System Initialized
+2024-12-03 16:25:44 INFO  DayLogger - End of Day: 0
+2024-12-03 16:25:44 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:25:59 INFO  DayLogger - End of Day: 1
+2024-12-03 16:25:59 INFO  DayLogger - Changed day to: 2
+2024-12-03 16:26:14 INFO  DayLogger - End of Day: 2
+2024-12-03 16:26:14 INFO  DayLogger - Changed day to: 3
+2024-12-03 16:26:29 INFO  DayLogger - End of Day: 3
+2024-12-03 16:26:29 INFO  DayLogger - Changed day to: 4
+2024-12-03 16:26:44 INFO  DayLogger - End of Day: 4
+2024-12-03 16:26:44 INFO  DayLogger - Changed day to: 5
+2024-12-03 16:26:59 INFO  DayLogger - End of Day: 5
+2024-12-03 16:26:59 INFO  DayLogger - Changed day to: 6
+2024-12-03 16:27:14 INFO  DayLogger - End of Day: 6
+2024-12-03 16:27:14 INFO  DayLogger - Changed day to: 7
+2024-12-03 16:46:18 INFO  DayLogger - Day System Initialized
+2024-12-03 16:46:18 INFO  DayLogger - End of Day: 0
+2024-12-03 16:46:18 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:47:13 INFO  DayLogger - Day System Initialized
+2024-12-03 16:47:13 INFO  DayLogger - End of Day: 0
+2024-12-03 16:47:13 INFO  DayLogger - Changed day to: 1
+2024-12-03 16:47:28 INFO  DayLogger - End of Day: 1
+2024-12-03 16:47:28 INFO  DayLogger - Changed day to: 2
+2024-12-03 20:06:31 INFO  DayLogger - Day System Initialized
+2024-12-03 20:06:31 INFO  DayLogger - End of Day: 0
+2024-12-03 20:06:31 INFO  DayLogger - Changed day to: 1
+2024-12-03 20:06:46 INFO  DayLogger - End of Day: 1
+2024-12-03 20:06:46 INFO  DayLogger - Changed day to: 2
+2024-12-03 20:07:01 INFO  DayLogger - End of Day: 2
+2024-12-03 20:07:01 INFO  DayLogger - Changed day to: 3
+2024-12-03 20:07:16 INFO  DayLogger - End of Day: 3
+2024-12-03 20:07:16 INFO  DayLogger - Changed day to: 4
+2024-12-04 17:32:44 INFO  DayLogger - Day System Initialized
+2024-12-04 17:32:44 INFO  DayLogger - End of Day: 0
+2024-12-04 17:32:44 INFO  DayLogger - Changed day to: 1
+2024-12-04 17:32:59 INFO  DayLogger - End of Day: 1
+2024-12-04 17:32:59 INFO  DayLogger - Changed day to: 2
+2024-12-04 17:33:14 INFO  DayLogger - End of Day: 2
+2024-12-04 17:33:14 INFO  DayLogger - Changed day to: 3
+2024-12-04 17:33:29 INFO  DayLogger - End of Day: 3
+2024-12-04 17:33:29 INFO  DayLogger - Changed day to: 4
+2024-12-04 17:33:44 INFO  DayLogger - End of Day: 4
+2024-12-04 17:33:44 INFO  DayLogger - Changed day to: 5
+2024-12-04 17:33:59 INFO  DayLogger - End of Day: 5
+2024-12-04 17:33:59 INFO  DayLogger - Changed day to: 6
+2024-12-04 17:34:14 INFO  DayLogger - End of Day: 6
+2024-12-04 17:34:14 INFO  DayLogger - Changed day to: 7
+2024-12-04 17:34:29 INFO  DayLogger - End of Day: 7
+2024-12-04 17:34:29 INFO  DayLogger - Changed day to: 8
+2024-12-04 17:34:44 INFO  DayLogger - End of Day: 8
+2024-12-04 17:34:44 INFO  DayLogger - Changed day to: 9
+2024-12-04 17:34:59 INFO  DayLogger - End of Day: 9
+2024-12-04 17:34:59 INFO  DayLogger - Changed day to: 10
+2024-12-04 17:35:14 INFO  DayLogger - End of Day: 10
+2024-12-04 17:35:14 INFO  DayLogger - Changed day to: 11
+2024-12-04 17:35:29 INFO  DayLogger - End of Day: 11
+2024-12-04 17:35:29 INFO  DayLogger - Changed day to: 12
+2024-12-04 17:35:44 INFO  DayLogger - End of Day: 12
+2024-12-04 17:35:44 INFO  DayLogger - Changed day to: 13
+2024-12-04 17:35:59 INFO  DayLogger - End of Day: 13
+2024-12-04 17:35:59 INFO  DayLogger - Changed day to: 14
+2024-12-04 21:18:40 INFO  DayLogger - Day System Initialized
+2024-12-04 21:18:40 INFO  DayLogger - End of Day: 0
+2024-12-04 21:18:40 INFO  DayLogger - Changed day to: 1
+2024-12-04 21:18:55 INFO  DayLogger - End of Day: 1
+2024-12-04 21:18:55 INFO  DayLogger - Changed day to: 2
+2024-12-04 21:19:10 INFO  DayLogger - End of Day: 2
+2024-12-04 21:19:10 INFO  DayLogger - Changed day to: 3
+2024-12-04 21:19:25 INFO  DayLogger - End of Day: 3
+2024-12-04 21:19:25 INFO  DayLogger - Changed day to: 4
+2024-12-04 21:19:40 INFO  DayLogger - End of Day: 4
+2024-12-04 21:19:40 INFO  DayLogger - Changed day to: 5
+2024-12-04 21:19:55 INFO  DayLogger - End of Day: 5
+2024-12-04 21:19:55 INFO  DayLogger - Changed day to: 6
+2024-12-04 21:20:10 INFO  DayLogger - End of Day: 6
+2024-12-04 21:20:10 INFO  DayLogger - Changed day to: 7
+2024-12-04 21:20:25 INFO  DayLogger - End of Day: 7
+2024-12-04 21:20:25 INFO  DayLogger - Changed day to: 8
+2024-12-04 21:20:40 INFO  DayLogger - End of Day: 8
+2024-12-04 21:20:40 INFO  DayLogger - Changed day to: 9
+2024-12-04 21:20:50 INFO  DayLogger - Day System Initialized
+2024-12-04 21:20:50 INFO  DayLogger - End of Day: 0
+2024-12-04 21:20:50 INFO  DayLogger - Changed day to: 1
+2024-12-04 21:21:05 INFO  DayLogger - End of Day: 1
+2024-12-04 21:21:05 INFO  DayLogger - Changed day to: 2
+2024-12-04 21:21:20 INFO  DayLogger - End of Day: 2
+2024-12-04 21:21:20 INFO  DayLogger - Changed day to: 3
+2024-12-04 21:21:35 INFO  DayLogger - End of Day: 3
+2024-12-04 21:21:35 INFO  DayLogger - Changed day to: 4
+2024-12-04 21:21:50 INFO  DayLogger - End of Day: 4
+2024-12-04 21:21:50 INFO  DayLogger - Changed day to: 5
+2024-12-04 21:32:20 INFO  DayLogger - Day System Initialized
+2024-12-04 21:32:20 INFO  DayLogger - End of Day: 0
+2024-12-04 21:32:20 INFO  DayLogger - Changed day to: 1
+2024-12-04 21:32:35 INFO  DayLogger - End of Day: 1
+2024-12-04 21:32:35 INFO  DayLogger - Changed day to: 2
+2024-12-04 21:32:50 INFO  DayLogger - End of Day: 2
+2024-12-04 21:32:50 INFO  DayLogger - Changed day to: 3
+2024-12-04 21:33:05 INFO  DayLogger - End of Day: 3
+2024-12-04 21:33:05 INFO  DayLogger - Changed day to: 4
+2024-12-04 21:33:20 INFO  DayLogger - End of Day: 4
+2024-12-04 21:33:20 INFO  DayLogger - Changed day to: 5
+2024-12-04 21:33:35 INFO  DayLogger - End of Day: 5
+2024-12-04 21:33:35 INFO  DayLogger - Changed day to: 6
+2024-12-04 21:33:50 INFO  DayLogger - End of Day: 6
+2024-12-04 21:33:50 INFO  DayLogger - Changed day to: 7
+2024-12-04 21:34:05 INFO  DayLogger - End of Day: 7
+2024-12-04 21:34:05 INFO  DayLogger - Changed day to: 8
+2024-12-04 21:34:20 INFO  DayLogger - End of Day: 8
+2024-12-04 21:34:20 INFO  DayLogger - Changed day to: 9
+2024-12-04 21:34:35 INFO  DayLogger - End of Day: 9
+2024-12-04 21:34:35 INFO  DayLogger - Changed day to: 10
