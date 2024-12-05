@@ -1,5 +1,6 @@
 package com.example.ooad_project.SubSystems;
 
+import com.example.ooad_project.Events.DayChangeEvent;
 import com.example.ooad_project.Events.DisplayParasiteEvent;
 import com.example.ooad_project.Events.ParasiteEvent;
 import com.example.ooad_project.GardenGrid;
@@ -11,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class PesticideSystem implements Runnable{
-
+    private int currentDay;
     private final GardenGrid gardenGrid;
     private static final Logger logger = LogManager.getLogger("PesticideSystemLogger");
 
@@ -20,9 +21,13 @@ public class PesticideSystem implements Runnable{
 //        System.out.println("Pesticide System Initialized");
         logger.info("Pesticide System Initialized");
 
-
+        EventBus.subscribe("DayChangeEvent", event -> handleDayChangeEvent((DayChangeEvent) event));
 //        Subscribe to the ParasiteEvent that will be published by the GardenSimulationAPI
         EventBus.subscribe("ParasiteEvent", event -> handlePesticideEvent((ParasiteEvent) event));
+    }
+
+    private void handleDayChangeEvent(DayChangeEvent event) {
+        this.currentDay = event.getDay(); // Update currentDay
     }
 
     private void handlePesticideEvent(ParasiteEvent event) {
@@ -37,23 +42,16 @@ public class PesticideSystem implements Runnable{
 
 //                    Publish an event to display the parasite on the plant
 //                    This is for the JavaFX GUI
-                    EventBus.publish("DisplayParasiteEvent", new DisplayParasiteEvent(parasite, i, j));
+                    EventBus.publish("Day: " + currentDay + " DisplayParasiteEvent", new DisplayParasiteEvent(parasite, i, j));
 
 //                    Apply the parasite to the plant
-//                    Damage the plant according to the damage of the parasite
                     parasite.affectPlant(plant);
-
-                    logger.info("Pesticide system applied {} to {} at position ({}, {})", parasite.getName(), plant.getName(), i, j);
-                    System.out.println("Pesticide system applied " + parasite.getName() + " to " + plant.getName() + " at position (" + i + ", " + j + ")");
+                    logger.info("Day: " + currentDay + " Pesticide system applied {} to {} at position ({}, {})", parasite.getName(), plant.getName(), i, j);
 //                    Heal the plant by half the damage of the parasite
-//                    This is what the pesticide system does
                     plant.healPlant(parasite.getDamage()/2);
                 }
             }
         }
-
-
-
     }
 
 

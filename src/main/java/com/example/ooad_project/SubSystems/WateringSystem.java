@@ -1,5 +1,6 @@
 package com.example.ooad_project.SubSystems;
 
+import com.example.ooad_project.Events.DayChangeEvent;
 import com.example.ooad_project.GardenGrid;
 import com.example.ooad_project.Plant.Plant;
 import com.example.ooad_project.ThreadUtils.EventBus;
@@ -16,7 +17,7 @@ public class WateringSystem implements Runnable {
     private static final Logger logger = LogManager.getLogger("WateringSystemLogger");
     private int rainAmount = 0;
     private final GardenGrid gardenGrid;
-
+    private int currentDay;
     @Override
     public void run() {
         while (true) {
@@ -35,9 +36,14 @@ public class WateringSystem implements Runnable {
 //        When a rain event is published, the watering system will handle it
         EventBus.subscribe("RainEvent", event -> handleRain((RainEvent) event));
         EventBus.subscribe("SprinklerActivationEvent", event -> sprinkle());
-//        Get the garden grid instance
+        EventBus.subscribe("DayChangeEvent", event -> handleDayChangeEvent((DayChangeEvent) event));
+        //        Get the garden grid instance
 //        This is the grid that holds all the plants
         this.gardenGrid = GardenGrid.getInstance();
+    }
+
+    private void handleDayChangeEvent(DayChangeEvent event) {
+        this.currentDay = event.getDay(); // Update currentDay
     }
 
 //    This method is called when a rain event is published
@@ -50,14 +56,7 @@ public class WateringSystem implements Runnable {
                 Plant plant = gardenGrid.getPlant(i, j);
                 if (plant != null) {
                     plant.addWater(event.getAmount());
-
-
-//                    Publish Event anytime rain adds water
-
-//                    EventBus.publish(new PlantWateredEvent(plant, event.getAmount()));
-
-
-                    logger.info("Watered {} at position ({}, {}) with {} water from rain", plant.getName(), i, j, event.getAmount());
+                    logger.info("Day: " + currentDay + " Watered {} at position ({}, {}) with {} water from rain", plant.getName(), i, j, event.getAmount());
                 }
             }
         }
@@ -71,7 +70,7 @@ public class WateringSystem implements Runnable {
 //    The amount of water each plant gets depends on how much water it needs
     private void sprinkle() {
 //        System.out.println("Sprinklers activated!");
-        logger.info("Sprinklers activated!");
+        logger.info("Day: " + currentDay + " Sprinklers activated!");
         int counter = 0; // Counter to keep track of how many plants are watered
 
         for (int i = 0; i < gardenGrid.getNumRows(); i++) {
@@ -83,21 +82,21 @@ public class WateringSystem implements Runnable {
 
 //                        Publish water needed later
 
-                        EventBus.publish("SprinklerEvent", new SprinklerEvent(plant.getRow(), plant.getCol(), waterNeeded));
+                        EventBus.publish("Day: " + currentDay + " SprinklerEvent", new SprinklerEvent(plant.getRow(), plant.getCol(), waterNeeded));
 
 
                         plant.addWater(waterNeeded);
 //                        Want to specify that the water is from sprinklers
-                        logger.info("Sprinkled {} at position ({}, {}) with {} water from sprinklers", plant.getName(), i, j, waterNeeded);
+                        logger.info("Day: " + currentDay + " Sprinkled {} at position ({}, {}) with {} water from sprinklers", plant.getName(), i, j, waterNeeded);
                         counter++;
                     }else {
-                        logger.info("{} at position ({}, {}) does not need water", plant.getName(), i, j);
+                        logger.info("Day: " + currentDay + " {} at position ({}, {}) does not need water", plant.getName(), i, j);
                     }
                 }
             }
         }
 
-        logger.info("In total Sprinkled {} plants", counter);
+        logger.info("Day: " + currentDay + " In total Sprinkled {} plants", counter);
 //        gardenGrid.printAllPlantStats();
     }
 }
