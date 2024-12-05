@@ -91,7 +91,7 @@ public class GardenSimulationAPI implements GardenSimulationAPIInterface {
 
     @Override
     public void getState() {
-        logger.info("API called to get current state of the garden.");
+        logger.info("Day: " + DaySystem.getInstance().getCurrentDay() + "API called to get current state of the garden.");
         StringBuilder stateBuilder = new StringBuilder();
         stateBuilder.append(String.format("Current Garden State as of Day %d:\n", DaySystem.getInstance().getCurrentDay()));
 
