@@ -76,7 +76,6 @@ public abstract class Plant {
         }
 
         // Log the healing action
-        System.out.println("Plant: " + this.name + " at position (" + this.row + ", " + this.col + ") healed by " + healAmount + " points, new health: " + this.currentHealth);
         logger.info("Plant: {} at position ({}, {}) healed by {} points, new health: {}",
                 this.name, this.row, this.col, healAmount, this.currentHealth);
     }
