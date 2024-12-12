@@ -331,7 +331,8 @@ public class GardenUIController {
     }
 
     private void handlePlantHealthUpdateEvent(PlantHealthUpdateEvent event){
-        System.out.println("Plant health updated at row " + event.getRow() + " and column " + event.getCol() + " from " + event.getOldHealth() + " to " + event.getNewHealth());
+        logger.info("Day: " + logDay + " Plant health updated at row " + event.getRow() + " and column " + event.getCol() + " from " + event.getOldHealth() + " to " + event.getNewHealth());
+//        System.out.println("Plant health updated at row " + event.getRow() + " and column " + event.getCol() + " from " + event.getOldHealth() + " to " + event.getNewHealth());
     }
 
     private void handleInitializeGarden() {
@@ -366,7 +367,7 @@ public class GardenUIController {
 
     private void addPlantToGridUI(Plant plant, int row, int col) {
 
-        logger.info("Day: " + currentDay + " Adding plant to grid: " + plant.getName() + " at row " + row + " and column " + col);
+        logger.info("Day: " + logDay + " Adding plant to grid: " + plant.getName() + " at row " + row + " and column " + col);
 
         String imageFile = plant.getCurrentImage();
         Image image = new Image(getClass().getResourceAsStream("/images/" + imageFile));
@@ -413,7 +414,7 @@ private void handleParasiteDamageEvent(ParasiteDamageEvent event) {
 
     private void handleTemperatureHeatEvent(TemperatureHeatEvent event) {
 
-        logger.info("Day: " + currentDay + " Displayed plant heated at row " + event.getRow() + " and column " + event.getCol() + " by " + event.getTempDiff());
+        logger.info("Day: " + logDay + " Displayed plant heated at row " + event.getRow() + " and column " + event.getCol() + " by " + event.getTempDiff());
 
         Platform.runLater(() -> {
             int row = event.getRow();
@@ -530,13 +531,11 @@ private void handleSprinklerEvent(SprinklerEvent event) {
 
     public void handleDayChangeEvent(DayChangeEvent event) {
 
-        logger.info("Day: " + currentDay + " Day changed to: " + event.getDay());
+        logger.info("Day: " + logDay + " Day changed to: " + event.getDay());
         dayChangeEvent = event;
-        System.out.println("day changed to: " + event.getDay());
         Platform.runLater(() -> {
             logDay = event.getDay();
             currentDay.setText("Day: " + event.getDay());
-            System.out.println("Day changed to: " + event.getDay());
         });
     }
 
@@ -574,9 +573,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             StackPane pane = new StackPane();
             pane.getChildren().add(newImageView);
             gridPane.add(pane, col, row);
-
-            System.out.println("Day: " + logDay + " Updated plant image at row " + row + " and column " + col + " to " + imageName);
-    });
+        });
     }
 
 
@@ -665,7 +662,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
     private void handleParasiteSelection(Parasite parasite) {
         // Implement what happens when a parasite is selected
         // For example, display details or apply effects to the garden
-        System.out.println("Selected parasite: " + parasite.getName() + " with damage: " + parasite.getDamage());
+//        System.out.println("Selected parasite: " + parasite.getName() + " with damage: " + parasite.getDamage());
     }
 
 //
@@ -684,7 +681,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
 
         Platform.runLater(() -> {
             // Update UI to reflect it's raining
-            System.out.println("Changing UI to reflect rain event");
+//            System.out.println("Changing UI to reflect rain event");
 
             // Create an ImageView for the rain icon
             Image rainImage = new Image(getClass().getResourceAsStream("/images/rain.png"));
@@ -701,7 +698,6 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             pause.setOnFinished(e -> {
                 // Update UI to reflect no rain after the event ends
                 showSunnyWeather();
-                System.out.println("Rain event ended, updating UI to show sunny weather.");
             });
             pause.play();
         });
@@ -736,7 +732,6 @@ private void handleSprinklerEvent(SprinklerEvent event) {
 
         Platform.runLater(() -> {
             // Update UI to reflect the temperature change
-            System.out.println("Changing UI to reflect temperature event");
 
             // Create an ImageView for the temperature icon
             String image = "normalTemperature.png";
@@ -761,7 +756,6 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             pause.setOnFinished(e -> {
                 // Update UI to reflect optimal temperature after the event ends
                 showOptimalTemperature();
-                System.out.println("Temperature event ended, updating UI to show optimal temperature.");
             });
             pause.play();
         });
@@ -790,7 +784,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
 
         Platform.runLater(() -> {
             // Update UI to reflect parasite event
-            System.out.println("Changing UI to reflect parasite event");
+//            System.out.println("Changing UI to reflect parasite event");
 
             // Create an ImageView for the sad icon
             Image parasiteImage = new Image(getClass().getResourceAsStream("/images/Parasites/noParasite.png"));
@@ -821,7 +815,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
             pause.setOnFinished(e -> {
                 // Update UI to reflect no parasites after the event ends
                 showNoParasites();
-                System.out.println("Parasite event ended, updating UI to show no parasites.");
+//                System.out.println("Parasite event ended, updating UI to show no parasites.");
             });
             pause.play();
         });
@@ -967,7 +961,7 @@ private void handleSprinklerEvent(SprinklerEvent event) {
                     farmerPause.setOnFinished(event -> {
                         // Code to execute after the 5-second pause
 //                    Need row and col for logging
-                        System.out.println("Placing " + name + " at row " + row + " col " + col);
+//                        System.out.println("Placing " + name + " at row " + row + " col " + col);
                         plant.setRow(row);
                         plant.setCol(col);
                         gardenGrid.addPlant(plant, row, col);

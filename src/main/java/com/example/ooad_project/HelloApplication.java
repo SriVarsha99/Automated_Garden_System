@@ -83,8 +83,6 @@ public class HelloApplication extends Application {
             if (!parasites.isEmpty()) {
                 Parasite randomParasite = parasites.get(rand.nextInt(parasites.size()));
                 api.parasite(randomParasite.getName()); // Use a random parasite
-            } else {
-                System.out.println("No parasites available to simulate.");
             }
         }));
         timeline3.setCycleCount(Timeline.INDEFINITE);
